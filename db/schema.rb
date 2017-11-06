@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20171106024754) do
     t.string "last_name"
     t.string "address"
     t.string "city"
-    t.string "country"
     t.string "postal_code"
     t.string "email"
     t.datetime "created_at", null: false
