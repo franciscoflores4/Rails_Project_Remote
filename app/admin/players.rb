@@ -12,5 +12,5 @@ ActiveAdmin.register Player do
 #   permitted
 # end
 
-permit_params :name
+permit_params :name, :team_id
 end

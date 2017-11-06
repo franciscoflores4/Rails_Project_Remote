@@ -11,6 +11,6 @@ ActiveAdmin.register Jersey do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-permit_params :price, :description, :size, :stock_quantity
+permit_params :price, :description, :size, :stock_quantity, :team_id, :player_id
 
 end
