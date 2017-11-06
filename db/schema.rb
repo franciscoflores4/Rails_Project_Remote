@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106020048) do
+ActiveRecord::Schema.define(version: 20171106024754) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -61,6 +61,10 @@ ActiveRecord::Schema.define(version: 20171106020048) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "player_id"
+    t.integer "team_id"
+    t.index ["player_id"], name: "index_jerseys_on_player_id"
+    t.index ["team_id"], name: "index_jerseys_on_team_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -72,12 +76,18 @@ ActiveRecord::Schema.define(version: 20171106020048) do
     t.decimal "hst"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "jersey_id"
+    t.integer "customer_id"
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
+    t.index ["jersey_id"], name: "index_orders_on_jersey_id"
   end
 
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "team_id"
+    t.index ["team_id"], name: "index_players_on_team_id"
   end
 
   create_table "provinces", force: :cascade do |t|
