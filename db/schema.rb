@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20171106024754) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "province_id"
   end
 
   create_table "jerseys", force: :cascade do |t|
