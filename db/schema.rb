@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20171106024754) do
     t.datetime "updated_at", null: false
     t.integer "player_id"
     t.integer "team_id"
+    t.integer "stock_quantity"
     t.index ["player_id"], name: "index_jerseys_on_player_id"
     t.index ["team_id"], name: "index_jerseys_on_team_id"
   end
