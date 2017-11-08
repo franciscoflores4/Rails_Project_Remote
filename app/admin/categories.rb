@@ -1,4 +1,4 @@
-ActiveAdmin.register Jersey do
+ActiveAdmin.register Category do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -11,6 +11,5 @@ ActiveAdmin.register Jersey do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-permit_params :price, :description, :size, :stock_quantity, :team_id, :player_id, :category_id
-
+permit_params :name
 end
