@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
 	has_many :jerseys
-	validates :category, presence:true
+	validates :name, presence:true
 end

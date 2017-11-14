@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20171108200124) do
     t.integer "team_id"
     t.integer "stock_quantity"
     t.integer "category_id"
+    t.string "image"
     t.index ["category_id"], name: "index_jerseys_on_category_id"
     t.index ["player_id"], name: "index_jerseys_on_player_id"
     t.index ["team_id"], name: "index_jerseys_on_team_id"
