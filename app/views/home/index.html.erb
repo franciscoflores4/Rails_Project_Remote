@@ -1,6 +1,6 @@
 <h1>Jerseys</h1>
 <% @jerseys.each do |jersey| %>
-	<p><%= image_tag(jersey.image) %></p>
+	<p><%= link_to image_tag(jersey.image), jersey_path(jersey) %></p>
 	<div class ="player">
 		<h3><%= jersey.player[:name] %></h3>
 		<h3><%= jersey.team[:name] %></h3>

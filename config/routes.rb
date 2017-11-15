@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  get 'home/index' to: 'home#index', as: 'jerseys'
+  get 'about/about'
+  get 'contact/contact'
+  get 'show/show/:id', to: 'show#show', as: 'jersey', id: /\d+/
 
   root to: 'jersey#index'
 

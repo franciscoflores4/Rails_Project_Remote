@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-  	@jerseys = Jersey.all
+  	@jerseys = Jersey.all.page params[:page]
   end
 end
