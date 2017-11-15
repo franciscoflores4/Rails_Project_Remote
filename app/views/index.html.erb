@@ -1,0 +1,15 @@
+<h1>Jerseys</h1>
+<% @jerseys.each do |jersey| %>
+<h2><%= jersey.name %></h2>
+<p><%= image_tag(jersey.image) %></p>
+<% jersey.players.each do |player| %>
+<div class ="player">
+<h3><%= player.name %></h3>
+<% jersey.team.each do |team| %>
+<h3><% team.name %></h3>
+<h3><%jersey.size%></h3>
+<h2><%jersey.price%></h2>
+</div>
+<% end %>
+<% end %>
+<% end %>

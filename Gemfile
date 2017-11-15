@@ -55,4 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
-gem 'sorted', '~> 2.1', '>= 2.1.2'
+gem 'kaminari'
