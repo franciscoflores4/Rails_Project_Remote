@@ -7,7 +7,8 @@ class Jersey < ApplicationRecord
 
 	 def self.search(search)
 	 	if search
-		    @js = Jersey.joins(:player).select('player.name').where('player[:name] LIKE ? "%#{search}%" AND player[:id] = player_id').first
+		    @js = Jersey.joins(:player).select('player_id').where('name LIKE ?', "%#{search}%").first
+		  	@a = Jersey.where('player_id' => @js)
 		  else
 		    find(:all)
 		end
