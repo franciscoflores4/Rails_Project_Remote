@@ -9,4 +9,8 @@
   		<ul>
   			<li><%= link_to 'Contact Us', contact_contact_path %></li>
   		</ul>
+     <%= form_tag(search_search_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %> 
   </header>
