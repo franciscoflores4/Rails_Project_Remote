@@ -1,0 +1,11 @@
+<h1>Clearance</h1>
+
+<% @jerseys.each do |jersey| %>
+	<p><%= link_to image_tag(jersey.image), jersey_path(jersey) %></p>
+	<div class ="player">
+		<h3><%= jersey.player[:name] %></h3>
+		<h3><%= jersey.team[:name] %></h3>
+		<h3><%= jersey.size %></h3>
+		<h2><%= jersey.price %></h2>
+	</div>
+<% end %>
