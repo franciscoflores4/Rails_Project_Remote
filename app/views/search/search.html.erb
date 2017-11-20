@@ -1,10 +1,4 @@
-<h1>Search Results:</h1>
-<h1>Jerseys</h1>
 
-
-	<div class ="player">
-		<h3><%= @js.player[:name] %></h3>
-		<p><%= @a.price %></p>
-	</div>
-
+<%= render partial: 'j', object: @js %>
+<p><%= link_to 'Back', home_index_path%></p>
 
