@@ -7,7 +7,7 @@ class Jersey < ApplicationRecord
 
 	 def self.search(search)
 	 	if search
-		    @js = Jersey.joins(:player).select('image, price, size AND player_id').where('name LIKE ?', "%#{search}%").first
+		    @js = Jersey.joins(:player).select('*').where('name LIKE ?', "%#{search}%").first
 		  else
 		    find(:all)
 		end
