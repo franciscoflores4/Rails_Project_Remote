@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'pages/contact', to: 'pages#contact', as:'contact'
   get 'pages/about', to: 'pages#about', as:'about'
   get 'on_sale/on_sale', to: 'on_sale#on_sale', as:'on_sale'
-  get 'limited_edition/limited_edition', to: 'limited#limited', as:'limited'
+  get 'limited_edition/limited', to: 'limited#limited', as:'limited'
   get 'clearance/clearance', to: 'clearance#clearance', as:'clearance'
   root to: 'jersey#index'
 
