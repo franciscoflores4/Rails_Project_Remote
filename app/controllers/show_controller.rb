@@ -1,5 +1,5 @@
 class ShowController < ApplicationController
 	def show
-		@jersey = Jersey.find(params[:id]).page params[:page]
+		@jersey = Jersey.find(params[:id])
 	end
 end

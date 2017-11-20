@@ -11,7 +11,7 @@ class Order < ApplicationRecord
 
 	private 
 	def set_order_status
-		self.status = "Order Received"
+		self.status = "Order Paid"
 	end
 
 	def update_subtotal
