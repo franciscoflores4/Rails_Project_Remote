@@ -3,6 +3,8 @@ class Jersey < ApplicationRecord
 	belongs_to :player
 	belongs_to :category
 	has_many :orders
+	has_many :cart_items
+	has_many:carts, :through => :cart_items
 	validates :price, :size, :stock_quantity, :category, presence:true
 
 	 def self.search(search)
@@ -12,9 +14,4 @@ class Jersey < ApplicationRecord
 		    find(:all)
 		end
 	 end
-	 
-	def index
-	    @products = Jersey.all
-	    @order_item = current_order.order_items.new
-	  end
 end

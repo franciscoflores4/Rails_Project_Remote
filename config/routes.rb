@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'on_sale/on_sale', to: 'on_sale#on_sale', as:'on_sale'
   get 'limited_edition/limited', to: 'limited#limited', as:'limited'
   get 'clearance/clearance', to: 'clearance#clearance', as:'clearance'
-  get 'cart/cart', to: 'cart#cart', as:'cart'
+  get 'cart/cart/:id', to: 'cart#cart', as:'cart', id: /\d+/
   root to: 'jersey#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
