@@ -2,7 +2,9 @@ class CartController < ApplicationController
 	def index
 		total
 	end
-
+	def show
+    @order_items = current_order.order_items
+  end
 	def cart
 		session[:cart] << params[:jersey] unless session[:cart].include? params[:jersey]
 	end
