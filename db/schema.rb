@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121192439) do
+ActiveRecord::Schema.define(version: 20171129010657) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "email"
+    t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -87,6 +96,24 @@ ActiveRecord::Schema.define(version: 20171121192439) do
     t.index ["team_id"], name: "index_jerseys_on_team_id"
   end
 
+  create_table "order_items", force: :cascade do |t|
+    t.integer "jersey_id"
+    t.integer "order_id"
+    t.decimal "unit_price", precision: 12, scale: 3
+    t.integer "quantity"
+    t.decimal "total_price", precision: 12, scale: 3
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["jersey_id"], name: "index_order_items_on_jersey_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+  end
+
+  create_table "order_statuses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "orders", force: :cascade do |t|
     t.string "status"
     t.decimal "total"
@@ -98,6 +125,8 @@ ActiveRecord::Schema.define(version: 20171121192439) do
     t.datetime "updated_at", null: false
     t.integer "jersey_id"
     t.integer "customer_id"
+    t.decimal "tax"
+    t.decimal "shipping"
     t.index ["customer_id"], name: "index_orders_on_customer_id"
     t.index ["jersey_id"], name: "index_orders_on_jersey_id"
   end
@@ -129,6 +158,22 @@ ActiveRecord::Schema.define(version: 20171121192439) do
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user", force: :cascade do |t|
+    t.string "name"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "encrypted_password"
+    t.string "salt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

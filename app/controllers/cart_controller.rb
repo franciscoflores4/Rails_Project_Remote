@@ -1,9 +1,7 @@
 class CartController < ApplicationController
-	def initialize 
-		
-	    @product = Jersey.find(1)
-	    @cart_1 = Cart.create
-	    @cart_1.add(@cart_1)
-	  
-	  end
+	def create
+		@cart = Cart.find(session[:cart_id])
+    product = Product.find(params[:jersey_id])
+    @line_item = @cart.add_product(product.id)
+end
 end

@@ -1,7 +1,7 @@
 class CartItem < ApplicationRecord
   belongs_to :cart
   belongs_to :jersey
-  acts_as_shopping_cart_using :cart
+  acts_as_shopping_cart_item
 
 def add(product)
   @product = Jersey.find(params[:id])

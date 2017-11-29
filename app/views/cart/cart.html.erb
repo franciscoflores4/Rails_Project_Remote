@@ -1,4 +1,9 @@
 <h1>Cart</h1>
-<td><%= shopping_cart_item.item.price %></td>
+	<% @carts.each do |c| %>
+		<td><%= c.cart_items.first.product.price %></td>
+	<% end %>
+
+	
+
+
 <td><%= shopping_cart_item.quantity %></td>
-<% end %>

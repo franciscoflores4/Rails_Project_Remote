@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  get 'order_items/create'
+
+  get 'order_items/update'
+
+  get 'order_items/destroy'
+
+  get 'carts/show'
+
   get 'home/index' 
   get 'about/about'
   get 'contact/contact'
@@ -10,6 +19,18 @@ Rails.application.routes.draw do
   get 'limited_edition/limited', to: 'limited#limited', as:'limited'
   get 'clearance/clearance', to: 'clearance#clearance', as:'clearance'
   get 'cart/cart/:id', to: 'cart#cart', as:'cart', id: /\d+/
+  resource :cart, only: [:show]
+  resource :order_items, only: [:create, :update, :destroy]
+  
+
+  get "user/new", to: "user#new"
+  post "user/new", to: "user#new"
+  get 'user/:id', to: 'user#show', id: /\d+/
+
+  get "login", to: "sessions#new"
+  get "logout", to: "sessions#destroy"
+
+  root to: "products#index"
   root to: 'jersey#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config

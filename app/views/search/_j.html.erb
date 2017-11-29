@@ -1,8 +1,12 @@
-<p><%= image_tag(@js.image) %></p>
+<% if @js == nil %>
+	<h1>No results for your search</h1>
+<% else %>
+	<p><%= image_tag(@js.image) %></p>
 	<div class ="player">
 		<h3><%= @js.player[:name] %></h3>
 		<h3><%= @js.team[:name] %></h3>
 		<h3><%= @js.size %></h3>
 		<h2><%= @js.price %></h2>
-		<%= submit_tag "Add to Cart", :name => nil %>
+		<%= button_to 'Add to Cart', action: "add" %>
 	</div>
+<% end %>

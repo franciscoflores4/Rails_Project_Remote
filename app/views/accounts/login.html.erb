@@ -1,0 +1,11 @@
+<% @page_title = "UserAuth | Signup" %>
+<div class="Sign_Form">
+  <h1>Sign Up</h1>
+  <% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+  <% end %>
+  <%= form_tag do %>
+    <p><%= label_tag :name, "name:" %><%= text_field_tag :name, params[:name] %></p></br> 
+  <p><%= label_tag :password, "password:" %><%= text_field_tag :password, params[:password] %></p></br> 
+  <p><%= submit_tag "login" %></p></br> 
+  <% end %>
