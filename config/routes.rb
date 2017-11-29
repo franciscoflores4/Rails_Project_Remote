@@ -22,17 +22,23 @@ Rails.application.routes.draw do
   resource :cart, only: [:show]
   resource :order_items, only: [:create, :update, :destroy]
   
-
+  resource :sessions
   get "user/new", to: "user#new"
   post "user/new", to: "user#new"
   get 'user/:id', to: 'user#show', id: /\d+/
-
-  get "login", to: "sessions#new"
+  get "create", to: "sessions#new"
+  get "login", to: "sessions#create"
   get "logout", to: "sessions#destroy"
 
-  root to: "products#index"
+  root to: 'home#index'
   root to: 'jersey#index'
-  
+
+  resources :passwords, controller: "clearance/passwords", only: [:create, :new]
+  resource :session, controller: "clearance/sessions", only: [:create, :destroy]
+
+  resources :users, controller: "clearance/users", only: [:create] do
+
+  end
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

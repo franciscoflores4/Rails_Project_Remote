@@ -9,7 +9,7 @@ def create
 	if user and user.authenticate(params[:password])
 
 		session[:user_id] = user.id
-		redirect_to home_path
+		redirect_to blah_path
 	else
 		redirect_to session_new_path
 	end

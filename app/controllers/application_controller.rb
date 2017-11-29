@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include Clearance::Controller
+  include SessionHelper
    protect_from_forgery with: :exception
    helper_method :current_order
    include SessionsHelper
