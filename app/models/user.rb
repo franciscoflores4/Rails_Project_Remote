@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include Clearance::User
+
 	attr_accessor :password
 	attr_accessor :name, :email, :password, :password_confirmation
 
