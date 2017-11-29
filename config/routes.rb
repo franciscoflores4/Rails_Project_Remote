@@ -26,8 +26,8 @@ Rails.application.routes.draw do
   get "user/new", to: "user#new"
   post "user/new", to: "user#new"
   get 'user/:id', to: 'user#show', id: /\d+/
-  get "create", to: "sessions#new"
-  get "login", to: "sessions#create"
+  get "create", to: "sessions#create"
+  get "login", to: "sessions#new"
   get "logout", to: "sessions#destroy"
 
   root to: 'home#index'

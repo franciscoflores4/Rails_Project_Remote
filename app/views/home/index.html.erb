@@ -7,7 +7,7 @@
 		<h3><%= jersey.team[:name] %></h3>
 		<h3><%= jersey.size %></h3>
 		<h2><%= jersey.price %></h2>
-		<%= submit_tag "Add to Cart", :name => nil %>
+		<%= button_to 'Add to Cart', carts_show_path, method: :create %>
 
 
 	</div>

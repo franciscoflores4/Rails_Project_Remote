@@ -22,12 +22,7 @@
 
   <body>
   <header>
-    <% if signed_in? %>
-      Signed in as: <%= current_user.email %>
-      <%= button_to 'Sign out', sign_out_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign in', sign_in_path %>
-    <% end %>
+    
   </header>
     <section>
       <div id="flash">
@@ -36,6 +31,13 @@
       <% end %>
     </div>
       <%= render partial: 'common/header' %>
+      <% if signed_in? %>
+      Signed in as: <%= current_user.email %>
+      <%= button_to 'Sign out', sign_out_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign in', sign_in_path %>/<%= link_to 'Sign up', sign_up_path %>
+    <% end %>
+
       <%= yield %>
     </section>
   

@@ -1,4 +1,10 @@
 module SessionsHelper
+	def User.authenticate(email, password)
+		user = find_by_email(email)
+		return nil if user.nil?
+		return user if !user.nil?
+	end
+
 	def sign_in(user)
 		session[:user_id] = user.id
 		self.current_user = user

@@ -1,5 +1,5 @@
 class SessionController < ApplicationController
-
+include Clearance::Controller
   def login
     #Login Form
 end

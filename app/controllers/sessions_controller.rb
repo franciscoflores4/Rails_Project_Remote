@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+	include Clearance::Controller
 	include SessionsHelper
 	def new
 	end
@@ -7,8 +8,8 @@ class SessionsController < ApplicationController
 		user = User.authenticate(params[:session][:email], params[:session][:password])
 
 		if user.nil?
-			flash.now[:notice] = "Invalid email/password combination"
-			render :new
+			flash[:error] = "Invalid email/password combination"
+			redirect_to sign_in_path
 		else
 			sign_in user redirect_to user
 		end
@@ -16,6 +17,6 @@ class SessionsController < ApplicationController
 
 	def destroy
 		sign_out
-		redirect_to signin_path
+		redirect_to sign_in_path
 	end
 end
