@@ -1,23 +1,37 @@
  <header>
-  	<nav>
-  		<ul>
-  			<li><%= link_to 'Home', home_index_path %></li>
-  	
-  		<!-- <ul>
-  			<li><%= link_to 'About', about_about_path %></li>
-  		</ul>
-  		<ul>
-  			<li><%= link_to 'Contact Us', contact_contact_path %></li>
-  		</ul> -->
-
-        <li><%= link_to 'On Sale', on_sale_path %></li>
-  
-        <li><%= link_to 'Limited Edition', limited_path %></li>
-
-        <li><%= link_to 'Clearance', clearance_path %></li>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Jersey Hunters</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to 'Home', home_index_path %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#"><%= link_to 'On Sale', on_sale_path %></a></li>
+            <li><a href="#"><li><a href="#"><%= link_to 'Limited Edition', limited_path %></a></li></a></li>
+            <li><a href="#"><%= link_to 'Clearance', clearance_path %></a></li>
+          </ul>
+        </li>
       </ul>
-     <%= form_tag(search_search_path, :method => "get", id: "search-form") do %>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <%= form_tag(search_search_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search" %>
     <%= submit_tag "Search", :name => nil %>
-<% end %> 
+    <% end %>  
+        </div>
+     </form>
+     </div>
+  </div><!-- /.container-fluid -->
+</nav>
   </header>

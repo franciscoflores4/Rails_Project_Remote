@@ -62,4 +62,3 @@ gem 'acts_as_shopping_cart', :github => 'crowdint/acts_as_shopping_cart', :branc
 gem 'simple_form'
 gem 'clearance', '~> 1.15.1'
 gem 'jquery-rails'
-gem 'spree', :github => 'spree/spree'
