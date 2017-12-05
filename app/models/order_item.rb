@@ -21,7 +21,7 @@ class OrderItem < ApplicationRecord
   private 
   def jersey_present
   	if product.nil?
-  		errors.add(:jersey, ;is not valid or is not active')
+  		errors.add(:jersey, 'is not valid or is not active')
   	end
   end
 
